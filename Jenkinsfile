@@ -37,8 +37,6 @@ pipeline {
                     echo "WorkSpace Creado!"
                     Start-Sleep -s 10
                     Invoke-RestMethod -Uri https://schematics.cloud.ibm.com/v1/workspaces/$id/plan -Method "Post" -Headers @{"Authorization" = $token ; "refresh_token" = $token}
-                    Start-Sleep -s 20
-                    Invoke-RestMethod -Uri https://schematics.cloud.ibm.com/v1/workspaces/$id/plan -Method "Post" -Headers @{"Authorization" = $token ; "refresh_token" = $token}
                     echo "Plan generado!"
                     '''
                     
