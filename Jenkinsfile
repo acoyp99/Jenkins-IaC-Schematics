@@ -16,7 +16,7 @@ pipeline {
 
                     powershell '''
 
-                    echo \"${params.Linux}
+                    echo \"${params.Linux}\"
                  
                     '''
                     
