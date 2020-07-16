@@ -7,9 +7,6 @@ pipeline {
 
     stages {
         stage("IBM Schematics") {
-            parameters{
-            booleanParam(name: 'Linux2', defaultValue: false, description:'Seleccione este campo si su Jenkins corre en Linux')
-    }
             
             steps {
                 script{
