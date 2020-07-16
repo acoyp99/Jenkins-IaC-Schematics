@@ -4,15 +4,16 @@ pipeline {
 
     parameters{
             booleanParam(name: 'Linux', defaultValue: false, description:'Seleccione este campo si su Jenkins corre en Linux')
-    }
+            text(name: 'Token', defaultValue: '', description: 'Ingrese el Token de acceso a IBM Cloud API')
+   }
 
     stages {
         stage("IBM Schematics") {
             
             steps {
                 script{
-
-                    powershell "echo ${params.Linux};${id}='HOLA ${params.Linux}'"
+                    ${id}=${params.Token}
+                    powershell "echo ${params.Linux};$id='HOLA ${id}'"
                     powershell "${id}"
                  
                     
