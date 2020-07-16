@@ -12,8 +12,8 @@ pipeline {
             steps {
                 script{
 
-                    powershell "echo ${params.Linux};$${id}='HOLA ${params.Linux}'"
-                    powershell "echo ${id}"
+                    powershell "echo ${params.Linux};${id}='HOLA ${params.Linux}'"
+                    powershell "${id}"
                  
                     
                     
