@@ -13,7 +13,8 @@ pipeline {
             steps {
                 script{
                    // ${id}=${params.Token}
-                    powershell ''' echo \${params.Linux} '''
+                    powershell ''' 
+                    echo "OS is \${params.Linux}" '''
                     
                  
                     
