@@ -14,7 +14,11 @@ pipeline {
                 script{
                    // ${id}=${params.Token}
                     powershell ''' 
-                    echo "OS is $params.Linux" '''
+                    echo "OS is $params.Linux" 
+                    echo "OS is '$params.Linux"'
+                    echo "OS is $params.Linux"
+                    echo "OS is $params.Linux"
+                    echo "OS is $params.Linux"'''
                     
                  
                     
