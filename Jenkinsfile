@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     parameters{
-            choice(name: 'Sistema Operativo', choices: ['Linux','Windows'], description:'Seleccione este campo si su Jenkins corre en Linux')
+            choice(name: 'OS', choices: ['Linux','Windows'], description:'Seleccione este campo si su Jenkins corre en Linux')
             text(name: 'Token', defaultValue: '', description: 'Ingrese el Token de acceso a IBM Cloud API')
     }
     environment{
@@ -15,7 +15,7 @@ pipeline {
             
             steps {
                 script{
-                   if(params.Linux == Linux){
+                   if(params.OS == Linux){
                     sh ''' 
                     token="$env:token"
                     id=$(curl --request POST --url https://schematics.cloud.ibm.com/v1/workspaces -H "Authorization: $token" -d '{"name":"jenkins","type": ["terraform_v0.12"],"location": "us-east","description": "Demo","resource_group": "Default","tags": [],"template_repo": {"url": "https://github.com/emeloibmco/Skytap-DevOps-Terraform"},"template_data": [{"folder": ".","type": "terraform_v0.12","variablestore": [{"name": "username","value": "Mario.Olarte@ibm.com"},{"name": "api_token","value": "6115ade86dd67520095a252554744e0d09adc956"}]}]}' | grep -Eo "(jenkins-[0-9a-z-]*)" | tail -n 1) 
