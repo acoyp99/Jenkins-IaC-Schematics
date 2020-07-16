@@ -19,6 +19,7 @@ pipeline {
                     powershell ''' 
                     echo "OS is $params.Linux"
                     echo $env:OS
+                    echo $params:Linux
                     '''
                     
                  
