@@ -14,7 +14,7 @@ pipeline {
                 script{
                     ${id}=${params.Token}
                     powershell "echo ${params.Linux};$id='HOLA ${id}'"
-                    powershell "${id}"
+                    powershell "$id"
                  
                     
                     
