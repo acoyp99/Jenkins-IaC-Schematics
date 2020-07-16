@@ -7,7 +7,7 @@ pipeline {
             text(name: 'Token', defaultValue: '', description: 'Ingrese el Token de acceso a IBM Cloud API')
     }
     environment{
-        OS = '${params.Linux}'
+        OS = "${params.Linux}"
     }
 
     stages {
