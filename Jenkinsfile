@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script{
                    // ${id}=${params.Token}
-                    powershell "echo ${params.Linux};$id='HOLA ${id}'"
+                    powershell "echo ${params.Linux};$id='HOLA ${params.Token}'"
                     powershell "$id"
                  
                     
