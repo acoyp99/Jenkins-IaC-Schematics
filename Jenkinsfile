@@ -15,7 +15,7 @@ pipeline {
             
             steps {
                 script{
-                   if(params.OS == Linux){
+                   if(params.OS == 'Linux'){
                     sh ''' 
                     token="$env:token"
                     id=$(curl --request POST --url https://schematics.cloud.ibm.com/v1/workspaces -H "Authorization: $token" -d '{"name":"jenkins","type": ["terraform_v0.12"],"location": "us-east","description": "Demo","resource_group": "Default","tags": [],"template_repo": {"url": "https://github.com/emeloibmco/Skytap-DevOps-Terraform"},"template_data": [{"folder": ".","type": "terraform_v0.12","variablestore": [{"name": "username","value": "Mario.Olarte@ibm.com"},{"name": "api_token","value": "6115ade86dd67520095a252554744e0d09adc956"}]}]}' | grep -Eo "(jenkins-[0-9a-z-]*)" | tail -n 1) 
