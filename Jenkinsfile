@@ -7,7 +7,7 @@ pipeline {
             text(name: 'Token', defaultValue: '', description: 'Ingrese el Token de acceso a IBM Cloud API')
     }
     environment{
-        OS = 'params.Linux'
+        OS = '${params.Linux}'
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
                 script{
                    // ${id}=${params.Token}
                     powershell ''' 
-                    echo "OS is $params.Linux"
+                    echo "OS is params.Linux"
                     echo $env:OS
                     echo $params:Linux
                     '''
